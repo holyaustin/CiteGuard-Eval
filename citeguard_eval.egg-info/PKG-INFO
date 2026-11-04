@@ -1,0 +1,120 @@
+Metadata-Version: 2.4
+Name: citeguard-eval
+Version: 1.0.0
+Summary: A deterministic benchmark for evaluating AI citation verification and evidence-grounded claim assessment.
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# CiteGuard-Eval
+**A reproducible benchmark for evaluating whether AI systems can verify academic references and determine whether cited evidence supports research claims.**
+
+## What it tests
+CiteGuard-Eval targets a practical failure mode: language models can produce confident bibliographic judgments while overlooking small but consequential inconsistencies, or overstate what a cited source actually demonstrates.
+
+The benchmark contains 10 controlled tasks across:
+- Bibliographic metadata matching (including author order, year, title, venue and DOI)
+- DOI mismatch / unsupported identifier detection
+- Missing metadata and calibrated abstention
+- Claim-to-evidence support, contradiction and partial support
+- Causal overclaim detection
+- Combined metadata and evidence verification
+
+All records and source excerpts in the included starter dataset are **synthetic fixtures**, not real publications. They are designed to make the gold answer independently auditable and the benchmark safe to redistribute. Do not describe them as real DOI lookups or evidence of real-world DOI registration.
+
+## Why it matters
+A fabricated or mismatched reference can undermine a paper's traceability. Even when a reference exists, it may not support the sentence attached to it. These are separate capabilities and CiteGuard scores them separately. The benchmark deliberately distinguishes:
+1. **Metadata correctness** — does the citation match the supplied authoritative record?
+2. **Evidence support** — does the supplied source excerpt entail, contradict, or only partly support the claim?
+3. **Calibration** — does the model abstain when a required field or evidence is missing?
+
+## Requirements
+- Python 3.10+
+- No third-party Python packages required for grading or tests.
+- Optional OpenAI-compatible API key to run a model (OpenRouter is the default endpoint).
+
+## Quick start
+From the project root:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Grade a saved answer file:
+
+```bash
+python citeguard/grade.py --answers citeguard/results/example_answers.json
+```
+
+Run a model (set credentials first):
+
+```bash
+export OPENAI_API_KEY="YOUR_KEY"
+export OPENAI_MODEL="your-provider/model-name"
+export OPENAI_BASE_URL="https://openrouter.ai/api/v1"
+python citeguard/run_model.py
+python citeguard/grade.py
+```
+
+For another OpenAI-compatible provider, change `OPENAI_BASE_URL`. Never commit API keys.
+
+## Output and scoring
+Each model must return one JSON object per task. The deterministic grader awards:
+- 4 points for the overall verdict
+- 3 points for the exact issue-code set
+- 1 point per metadata field when field-level comparison is part of the task
+- 2 points for the claim-support classification when applicable
+
+The score is the sum of earned points divided by available points. Missing answers receive zero. No LLM-as-a-judge is used. This reduces grader variance and makes the benchmark reproducible.
+
+**Interpretation note:** The current grader is intentionally strict about exact issue-code sets. This rewards precise diagnosis, not just a lucky overall verdict. Review per-criterion output rather than reporting only the aggregate score.
+
+## Task schema
+Each task contains:
+- `id`, `category`, `difficulty`, `question`
+- `citation`: citation fields supplied to the model
+- `claim` (optional): statement whose support is being assessed
+- `evidence`: controlled registry record or source excerpt
+- `gold`: benchmark answer key used only by the grader
+
+The runner sends task content but does not send `gold`.
+
+## Reproducibility
+- Dataset version: 1.0.0
+- Task count: 10
+- Randomness: model temperature set to 0
+- Grading: deterministic local Python
+- Network: required only for model inference
+- API costs: depend on selected provider/model and usage; no fixed cost is claimed
+- The benchmark can be graded offline after model answers have been saved.
+
+## Limitations and responsible claims
+- The current benchmark is a controlled, synthetic pilot. It does not prove that a model can or cannot verify real-world DOI registration.
+- The excerpts are short and self-contained; full-text interpretation, retractions, journal legitimacy, and live Crossref/OpenAlex resolution are outside this version.
+- A model score on ten tasks has high uncertainty. Report individual task outcomes and avoid broad claims about all academic research.
+- For stronger evidence, expand the task set, add independent human review, run multiple model families, and include real bibliographic records checked against public registries with provenance captured at collection time.
+
+## Project structure
+```
+citeguard/
+  data/tasks.json
+  grader.py
+  run_model.py
+  grade.py
+tests/test_grader.py
+submission/
+  DESCRIPTION.md
+  VIDEO_WALKTHROUGH.md
+```
+
+## Hackathon submission checklist
+- [ ] Read and accept the participant agreement.
+- [ ] Confirm the live HackerRank instructions and required format.
+- [ ] Run tests in a clean Python 3.10+ environment.
+- [ ] Run at least one model and include actual output/results; do not fabricate scores.
+- [ ] Explain meaningful observed model failures with task-level examples.
+- [ ] Record a walkthrough video (5 minutes maximum) and host it separately.
+- [ ] Put only code and small supporting files in the ZIP (under 50 MB).
+- [ ] Remove secrets and private data before submission.

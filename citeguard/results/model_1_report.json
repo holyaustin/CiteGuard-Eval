@@ -1,0 +1,413 @@
+{
+  "benchmark": "CiteGuard-Eval",
+  "tasks": [
+    {
+      "task_id": "CG-META-001",
+      "score": 12.0,
+      "max_score": 12.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "VERIFIED",
+          "actual": "VERIFIED",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [],
+          "actual": [],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "field:authors",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:year",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:title",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:venue",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:doi",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "task_id": "CG-META-002",
+      "score": 0.0,
+      "max_score": 12.0,
+      "percent": 0.0,
+      "passed": false,
+      "details": [
+        {
+          "criterion": "response_present",
+          "expected": "valid structured answer",
+          "actual": "missing or failed",
+          "passed": false,
+          "weight": 12
+        }
+      ]
+    },
+    {
+      "task_id": "CG-META-003",
+      "score": 0.0,
+      "max_score": 11.0,
+      "percent": 0.0,
+      "passed": false,
+      "details": [
+        {
+          "criterion": "response_present",
+          "expected": "valid structured answer",
+          "actual": "missing or failed",
+          "passed": false,
+          "weight": 11
+        }
+      ]
+    },
+    {
+      "task_id": "CG-META-004",
+      "score": 12.0,
+      "max_score": 12.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "INCORRECT",
+          "actual": "INCORRECT",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "DOI_MISMATCH"
+          ],
+          "actual": [
+            "DOI_MISMATCH"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "field:authors",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:year",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:title",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:venue",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:doi",
+          "expected": "mismatch",
+          "actual": "mismatch",
+          "passed": true,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "task_id": "CG-META-005",
+      "score": 12.0,
+      "max_score": 12.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "UNVERIFIABLE",
+          "actual": "UNVERIFIABLE",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "DOI_MISSING"
+          ],
+          "actual": [
+            "DOI_MISSING"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "field:authors",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:year",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:title",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:venue",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:doi",
+          "expected": "missing",
+          "actual": "missing",
+          "passed": true,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "task_id": "CG-CLAIM-001",
+      "score": 9.0,
+      "max_score": 9.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "NOT_SUPPORTED",
+          "actual": "NOT_SUPPORTED",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "EFFECT_SIZE_CONTRADICTED"
+          ],
+          "actual": [
+            "EFFECT_SIZE_CONTRADICTED"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "claim_support",
+          "expected": "contradicted",
+          "actual": "contradicted",
+          "passed": true,
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "task_id": "CG-CLAIM-002",
+      "score": 0.0,
+      "max_score": 9.0,
+      "percent": 0.0,
+      "passed": false,
+      "details": [
+        {
+          "criterion": "response_present",
+          "expected": "valid structured answer",
+          "actual": "missing or failed",
+          "passed": false,
+          "weight": 9
+        }
+      ]
+    },
+    {
+      "task_id": "CG-CLAIM-003",
+      "score": 9.0,
+      "max_score": 9.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "NOT_SUPPORTED",
+          "actual": "NOT_SUPPORTED",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "CAUSALITY_NOT_ESTABLISHED"
+          ],
+          "actual": [
+            "CAUSALITY_NOT_ESTABLISHED"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "claim_support",
+          "expected": "not_supported",
+          "actual": "not_supported",
+          "passed": true,
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "task_id": "CG-CLAIM-004",
+      "score": 9.0,
+      "max_score": 9.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "PARTIALLY_SUPPORTED",
+          "actual": "PARTIALLY_SUPPORTED",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "IMPACT_CLAIM_UNSUPPORTED"
+          ],
+          "actual": [
+            "IMPACT_CLAIM_UNSUPPORTED"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "claim_support",
+          "expected": "partial",
+          "actual": "partial",
+          "passed": true,
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "task_id": "CG-COMBINED-001",
+      "score": 14.0,
+      "max_score": 14.0,
+      "percent": 100.0,
+      "passed": true,
+      "details": [
+        {
+          "criterion": "verdict",
+          "expected": "INCORRECT",
+          "actual": "INCORRECT",
+          "passed": true,
+          "weight": 4
+        },
+        {
+          "criterion": "issue_codes",
+          "expected": [
+            "CLAIM_NOT_EVIDENCED",
+            "DOI_MISMATCH"
+          ],
+          "actual": [
+            "CLAIM_NOT_EVIDENCED",
+            "DOI_MISMATCH"
+          ],
+          "passed": true,
+          "weight": 3
+        },
+        {
+          "criterion": "field:authors",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:year",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:title",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:venue",
+          "expected": "match",
+          "actual": "match",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "field:doi",
+          "expected": "mismatch",
+          "actual": "mismatch",
+          "passed": true,
+          "weight": 1
+        },
+        {
+          "criterion": "claim_support",
+          "expected": "not_supported",
+          "actual": "not_supported",
+          "passed": true,
+          "weight": 2
+        }
+      ]
+    }
+  ],
+  "score": 77.0,
+  "max_score": 109.0,
+  "accuracy_percent": 70.64,
+  "tasks_submitted": 10,
+  "tasks_expected": 10
+}

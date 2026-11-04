@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+citeguard/results/model_answers.json
+citeguard/results/graded_results.json
+.venv/

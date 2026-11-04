@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citeguard-eval"
+version = "1.0.0"
+description = "A deterministic benchmark for evaluating AI citation verification and evidence-grounded claim assessment."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["citeguard*"]
+exclude = ["tests*", "submission*"]

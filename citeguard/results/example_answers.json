@@ -1,0 +1,122 @@
+[
+  {
+    "task_id": "CG-META-001",
+    "verdict": "VERIFIED",
+    "issues": [],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "match"
+    }
+  },
+  {
+    "task_id": "CG-META-002",
+    "verdict": "INCORRECT",
+    "issues": [
+      "DOI_MISMATCH"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "mismatch"
+    }
+  },
+  {
+    "task_id": "CG-META-003",
+    "verdict": "INCORRECT",
+    "issues": [
+      "AUTHOR_ORDER_MISMATCH",
+      "YEAR_MISMATCH",
+      "TITLE_MISMATCH"
+    ],
+    "field_status": {
+      "authors": "mismatch",
+      "year": "mismatch",
+      "title": "mismatch",
+      "venue": "match"
+    }
+  },
+  {
+    "task_id": "CG-META-004",
+    "verdict": "INCORRECT",
+    "issues": [
+      "DOI_MISMATCH"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "mismatch"
+    }
+  },
+  {
+    "task_id": "CG-META-005",
+    "verdict": "UNVERIFIABLE",
+    "issues": [
+      "DOI_MISSING"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "missing"
+    }
+  },
+  {
+    "task_id": "CG-CLAIM-001",
+    "verdict": "NOT_SUPPORTED",
+    "issues": [
+      "EFFECT_SIZE_CONTRADICTED"
+    ],
+    "support": "contradicted",
+    "rationale": "The excerpt reports a 2 percentage-point difference, not an 18 percentage-point increase."
+  },
+  {
+    "task_id": "CG-CLAIM-002",
+    "verdict": "SUPPORTED",
+    "issues": [],
+    "support": "supported",
+    "rationale": "The excerpt directly states deployment in two rural secondary schools."
+  },
+  {
+    "task_id": "CG-CLAIM-003",
+    "verdict": "NOT_SUPPORTED",
+    "issues": [
+      "CAUSALITY_NOT_ESTABLISHED"
+    ],
+    "support": "not_supported",
+    "rationale": "A cross-sectional association cannot establish that reducing screen time causes higher scores."
+  },
+  {
+    "task_id": "CG-CLAIM-004",
+    "verdict": "PARTIALLY_SUPPORTED",
+    "issues": [
+      "IMPACT_CLAIM_UNSUPPORTED"
+    ],
+    "support": "partial",
+    "rationale": "The missing-abstract statistic is supported, but the claimed effect on citation counts was not studied."
+  },
+  {
+    "task_id": "CG-COMBINED-001",
+    "verdict": "INCORRECT",
+    "issues": [
+      "DOI_MISMATCH",
+      "CLAIM_NOT_EVIDENCED"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "mismatch"
+    },
+    "support": "not_supported",
+    "rationale": "The DOI differs from the registry record and the excerpt contains no response-time measurement."
+  }
+]

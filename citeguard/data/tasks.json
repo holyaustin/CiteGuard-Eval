@@ -1,0 +1,366 @@
+[
+  {
+    "id": "CG-META-001",
+    "category": "metadata_mismatch",
+    "difficulty": "easy",
+    "question": "Verify whether the cited reference matches the authoritative record. Identify every metadata field that is wrong.",
+    "citation": {
+      "authors": [
+        "Maya Okafor",
+        "Daniel Reed"
+      ],
+      "year": 2022,
+      "title": "Reliable Data Pipelines for Small Research Teams",
+      "venue": "Journal of Applied Data Practice",
+      "doi": "10.5555/cgeval.2022.001"
+    },
+    "evidence": {
+      "record": {
+        "authors": [
+          "Maya Okafor",
+          "Daniel Reed"
+        ],
+        "year": 2022,
+        "title": "Reliable Data Pipelines for Small Research Teams",
+        "venue": "Journal of Applied Data Practice",
+        "doi": "10.5555/cgeval.2022.001"
+      },
+      "source": "Controlled synthetic registry record. All fields shown are authoritative."
+    },
+    "gold": {
+      "verdict": "VERIFIED",
+      "issues": [],
+      "field_status": {
+        "authors": "match",
+        "year": "match",
+        "title": "match",
+        "venue": "match",
+        "doi": "match"
+      }
+    }
+  },
+  {
+    "id": "CG-META-002",
+    "category": "metadata_mismatch",
+    "difficulty": "easy",
+    "question": "Compare the citation with the authoritative registry record. Return the incorrect fields.",
+    "citation": {
+      "authors": [
+        "Lina Mensah",
+        "Peter Cole"
+      ],
+      "year": 2021,
+      "title": "Measuring Trust in Digital Public Services",
+      "venue": "Computing and Society Review",
+      "doi": "10.5555/cgeval.2021.014"
+    },
+    "evidence": {
+      "record": {
+        "authors": [
+          "Lina Mensah",
+          "Peter Cole"
+        ],
+        "year": 2021,
+        "title": "Measuring Trust in Digital Public Services",
+        "venue": "Computing and Society Review",
+        "doi": "10.5555/cgeval.2021.041"
+      },
+      "source": "Controlled synthetic registry record. DOI value is authoritative."
+    },
+    "gold": {
+      "verdict": "INCORRECT",
+      "issues": [
+        "DOI_MISMATCH"
+      ],
+      "field_status": {
+        "authors": "match",
+        "year": "match",
+        "title": "match",
+        "venue": "match",
+        "doi": "mismatch"
+      }
+    }
+  },
+  {
+    "id": "CG-META-003",
+    "category": "metadata_mismatch",
+    "difficulty": "medium",
+    "question": "Check author order, year, title and venue against the registry. Do not treat a reordered author list as equivalent.",
+    "citation": {
+      "authors": [
+        "Ravi Shah",
+        "Amara Bello",
+        "Nora Kim"
+      ],
+      "year": 2020,
+      "title": "Auditing Machine Learning Data: A Practical Framework",
+      "venue": "International Journal of Data Stewardship"
+    },
+    "evidence": {
+      "record": {
+        "authors": [
+          "Amara Bello",
+          "Ravi Shah",
+          "Nora Kim"
+        ],
+        "year": 2021,
+        "title": "Auditing Machine Learning Datasets: A Practical Framework",
+        "venue": "International Journal of Data Stewardship"
+      },
+      "source": "Controlled synthetic registry record."
+    },
+    "gold": {
+      "verdict": "INCORRECT",
+      "issues": [
+        "AUTHOR_ORDER_MISMATCH",
+        "YEAR_MISMATCH",
+        "TITLE_MISMATCH"
+      ],
+      "field_status": {
+        "authors": "mismatch",
+        "year": "mismatch",
+        "title": "mismatch",
+        "venue": "match"
+      }
+    }
+  },
+  {
+    "id": "CG-META-004",
+    "category": "fabricated_identifier",
+    "difficulty": "medium",
+    "question": "Determine whether the DOI is supported by the supplied registry evidence. Do not infer that a plausible-looking DOI exists.",
+    "citation": {
+      "authors": [
+        "Ethan Brooks"
+      ],
+      "year": 2023,
+      "title": "A Lightweight Method for Detecting Dataset Leakage",
+      "venue": "Methods in Computational Research",
+      "doi": "10.5555/cgeval.2023.999"
+    },
+    "evidence": {
+      "record": {
+        "authors": [
+          "Ethan Brooks"
+        ],
+        "year": 2023,
+        "title": "A Lightweight Method for Detecting Dataset Leakage",
+        "venue": "Methods in Computational Research",
+        "doi": "10.5555/cgeval.2023.099"
+      },
+      "source": "The registry contains this matching title and author, but the DOI shown in the record is authoritative."
+    },
+    "gold": {
+      "verdict": "INCORRECT",
+      "issues": [
+        "DOI_MISMATCH"
+      ],
+      "field_status": {
+        "authors": "match",
+        "year": "match",
+        "title": "match",
+        "venue": "match",
+        "doi": "mismatch"
+      }
+    }
+  },
+  {
+    "id": "CG-META-005",
+    "category": "metadata_mismatch",
+    "difficulty": "medium",
+    "question": "Verify the citation. A missing field in the citation should be reported as UNVERIFIABLE, not guessed.",
+    "citation": {
+      "authors": [
+        "Zara Ali",
+        "Noah Grant"
+      ],
+      "year": 2019,
+      "title": "Open Data Governance in Local Institutions",
+      "venue": "Public Information Quarterly"
+    },
+    "evidence": {
+      "record": {
+        "authors": [
+          "Zara Ali",
+          "Noah Grant"
+        ],
+        "year": 2019,
+        "title": "Open Data Governance in Local Institutions",
+        "venue": "Public Information Quarterly",
+        "doi": "10.5555/cgeval.2019.008"
+      },
+      "source": "Controlled synthetic registry record."
+    },
+    "gold": {
+      "verdict": "UNVERIFIABLE",
+      "issues": [
+        "DOI_MISSING"
+      ],
+      "field_status": {
+        "authors": "match",
+        "year": "match",
+        "title": "match",
+        "venue": "match",
+        "doi": "missing"
+      }
+    }
+  },
+  {
+    "id": "CG-CLAIM-001",
+    "category": "claim_support",
+    "difficulty": "medium",
+    "question": "Does the supplied source excerpt support the paper's claim? Judge only the excerpt, not general plausibility.",
+    "citation": {
+      "authors": [
+        "Ivy Chen"
+      ],
+      "year": 2024,
+      "title": "Digital Reminders and Appointment Attendance",
+      "venue": "Health Systems Notes",
+      "doi": "10.5555/cgeval.2024.011"
+    },
+    "claim": "The intervention increased appointment attendance by 18 percentage points.",
+    "evidence": {
+      "source_title": "Digital Reminders and Appointment Attendance",
+      "excerpt": "In a controlled pilot, attendance was 72% in the reminder group and 70% in the comparison group. The authors describe the difference as small and statistically inconclusive."
+    },
+    "gold": {
+      "verdict": "NOT_SUPPORTED",
+      "issues": [
+        "EFFECT_SIZE_CONTRADICTED"
+      ],
+      "support": "contradicted",
+      "rationale": "The excerpt reports a 2 percentage-point difference, not an 18 percentage-point increase."
+    }
+  },
+  {
+    "id": "CG-CLAIM-002",
+    "category": "claim_support",
+    "difficulty": "easy",
+    "question": "Assess whether the claim is supported by the excerpt. Avoid adding conclusions not stated.",
+    "citation": {
+      "authors": [
+        "Samuel Nwosu"
+      ],
+      "year": 2022,
+      "title": "A Small Study of Offline Learning Tools",
+      "venue": "Education Technology Reports",
+      "doi": "10.5555/cgeval.2022.027"
+    },
+    "claim": "The study tested an offline learning tool in two rural schools.",
+    "evidence": {
+      "source_title": "A Small Study of Offline Learning Tools",
+      "excerpt": "The pilot deployed the offline learning application in two rural secondary schools over one academic term."
+    },
+    "gold": {
+      "verdict": "SUPPORTED",
+      "issues": [],
+      "support": "supported",
+      "rationale": "The excerpt directly states deployment in two rural secondary schools."
+    }
+  },
+  {
+    "id": "CG-CLAIM-003",
+    "category": "claim_support",
+    "difficulty": "medium",
+    "question": "Does the excerpt justify the causal claim? Distinguish correlation or observation from causation.",
+    "citation": {
+      "authors": [
+        "Leah Morgan",
+        "Tunde Eze"
+      ],
+      "year": 2023,
+      "title": "Screen Time and Student Performance: A Survey",
+      "venue": "Journal of Learning Metrics",
+      "doi": "10.5555/cgeval.2023.032"
+    },
+    "claim": "Reducing screen time causes higher examination scores.",
+    "evidence": {
+      "source_title": "Screen Time and Student Performance: A Survey",
+      "excerpt": "In a cross-sectional survey of 430 students, self-reported screen time was negatively associated with examination scores. The observational design does not establish causality."
+    },
+    "gold": {
+      "verdict": "NOT_SUPPORTED",
+      "issues": [
+        "CAUSALITY_NOT_ESTABLISHED"
+      ],
+      "support": "not_supported",
+      "rationale": "A cross-sectional association cannot establish that reducing screen time causes higher scores."
+    }
+  },
+  {
+    "id": "CG-CLAIM-004",
+    "category": "claim_support",
+    "difficulty": "hard",
+    "question": "Evaluate the full claim against the excerpt. A partly supported claim is not fully supported.",
+    "citation": {
+      "authors": [
+        "Mina Patel",
+        "Jonas Eriksson"
+      ],
+      "year": 2021,
+      "title": "Metadata Quality in Institutional Repositories",
+      "venue": "Library Systems Research",
+      "doi": "10.5555/cgeval.2021.055"
+    },
+    "claim": "The audit found that 40% of repository records had missing abstracts and that this problem caused lower citation counts.",
+    "evidence": {
+      "source_title": "Metadata Quality in Institutional Repositories",
+      "excerpt": "The audit found that 40% of sampled repository records had no abstract. The study did not examine citation counts or downstream scholarly impact."
+    },
+    "gold": {
+      "verdict": "PARTIALLY_SUPPORTED",
+      "issues": [
+        "IMPACT_CLAIM_UNSUPPORTED"
+      ],
+      "support": "partial",
+      "rationale": "The missing-abstract statistic is supported, but the claimed effect on citation counts was not studied."
+    }
+  },
+  {
+    "id": "CG-COMBINED-001",
+    "category": "combined",
+    "difficulty": "hard",
+    "question": "Verify both the citation metadata and the attached claim. Report metadata problems separately from claim-support problems.",
+    "citation": {
+      "authors": [
+        "Amina Yusuf",
+        "David Park"
+      ],
+      "year": 2020,
+      "title": "Community Networks and Emergency Information",
+      "venue": "Journal of Civic Technology",
+      "doi": "10.5555/cgeval.2020.071"
+    },
+    "claim": "Community networks reduced emergency response time by 50%.",
+    "evidence": {
+      "record": {
+        "authors": [
+          "Amina Yusuf",
+          "David Park"
+        ],
+        "year": 2020,
+        "title": "Community Networks and Emergency Information",
+        "venue": "Journal of Civic Technology",
+        "doi": "10.5555/cgeval.2020.017"
+      },
+      "source_excerpt": "The case study describes community networks as a channel for sharing alerts. It provides no measured response-time comparison."
+    },
+    "gold": {
+      "verdict": "INCORRECT",
+      "issues": [
+        "DOI_MISMATCH",
+        "CLAIM_NOT_EVIDENCED"
+      ],
+      "field_status": {
+        "authors": "match",
+        "year": "match",
+        "title": "match",
+        "venue": "match",
+        "doi": "mismatch"
+      },
+      "support": "not_supported",
+      "rationale": "The DOI differs from the registry record and the excerpt contains no response-time measurement."
+    }
+  }
+]

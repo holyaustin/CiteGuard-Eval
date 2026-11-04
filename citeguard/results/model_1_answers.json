@@ -1,0 +1,107 @@
+[
+  {
+    "task_id": "CG-META-001",
+    "verdict": "VERIFIED",
+    "issues": [],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "match"
+    },
+    "support": "",
+    "rationale": "All metadata fields in the citation (authors, year, title, venue, and doi) exactly match the provided authoritative record."
+  },
+  {
+    "task_id": "CG-META-002",
+    "error": "<urlopen error [Errno -2] Name or service not known>"
+  },
+  {
+    "task_id": "CG-META-003",
+    "error": "The read operation timed out"
+  },
+  {
+    "task_id": "CG-META-004",
+    "verdict": "INCORRECT",
+    "issues": [
+      "DOI_MISMATCH"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "mismatch"
+    },
+    "support": "",
+    "rationale": "The registry record agrees with the citation on authors, year, title, and venue, but the DOI does not match: the citation lists 10.5555/cgeval.2023.999 while the authoritative registry record shows 10.5555/cgeval.2023.099. Because the registry DOI is authoritative and differs from the cited DOI, the DOI is not supported."
+  },
+  {
+    "task_id": "CG-META-005",
+    "verdict": "UNVERIFIABLE",
+    "issues": [
+      "DOI_MISSING"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "missing"
+    },
+    "support": "",
+    "rationale": "The citation matches the controlled registry record for authors, year, title, and venue, but the citation omits the DOI present in the evidence. Per the task rule, a missing citation field must be reported as UNVERIFIABLE rather than guessed, so the DOI is treated as missing and the overall citation is unverifiable."
+  },
+  {
+    "task_id": "CG-CLAIM-001",
+    "verdict": "NOT_SUPPORTED",
+    "issues": [
+      "EFFECT_SIZE_CONTRADICTED"
+    ],
+    "field_status": {},
+    "support": "contradicted",
+    "rationale": "The excerpt reports a 2 percentage-point difference, not an 18 percentage-point increase."
+  },
+  {
+    "task_id": "CG-CLAIM-002",
+    "error": "<urlopen error _ssl.c:990: The handshake operation timed out>"
+  },
+  {
+    "task_id": "CG-CLAIM-003",
+    "verdict": "NOT_SUPPORTED",
+    "issues": [
+      "CAUSALITY_NOT_ESTABLISHED"
+    ],
+    "field_status": "match",
+    "support": "not_supported",
+    "rationale": "The evidence explicitly states that the observational cross-sectional design does not establish causality, directly contradicting the causal claim that reducing screen time causes higher examination scores."
+  },
+  {
+    "task_id": "CG-CLAIM-004",
+    "verdict": "PARTIALLY_SUPPORTED",
+    "issues": [
+      "IMPACT_CLAIM_UNSUPPORTED"
+    ],
+    "field_status": {},
+    "support": "partial",
+    "rationale": "The missing-abstract statistic (40%) is supported by the excerpt, but the claimed causal effect on citation counts is explicitly not examined in the study, so that part of the claim is unsupported."
+  },
+  {
+    "task_id": "CG-COMBINED-001",
+    "verdict": "INCORRECT",
+    "issues": [
+      "DOI_MISMATCH",
+      "CLAIM_NOT_EVIDENCED"
+    ],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "mismatch"
+    },
+    "support": "not_supported",
+    "rationale": "The DOI in the citation (10.5555/cgeval.2020.071) does not match the registry record (10.5555/cgeval.2020.017), and the source excerpt states that no measured response-time comparison is provided, leaving the claim of a 50% reduction in emergency response time completely unsupported."
+  }
+]

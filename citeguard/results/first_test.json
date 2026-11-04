@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": "CG-META-001",
+    "verdict": "VERIFIED",
+    "issues": [],
+    "field_status": {
+      "authors": "match",
+      "year": "match",
+      "title": "match",
+      "venue": "match",
+      "doi": "match"
+    },
+    "support": "",
+    "rationale": "The cited metadata exactly matches the authoritative controlled registry record, and no metadata mismatches were found."
+  }
+]
